@@ -12,7 +12,7 @@ struct Node{
 
 struct LinkedList{
   Node *head{nullptr};
-  pthread_mutex_t gLock{};
+  // pthread_mutex_t gLock{};
 
   void init(){
     this->head = nullptr;

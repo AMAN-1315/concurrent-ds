@@ -6,7 +6,7 @@
 
 void* threadRoutine(void* arg){
   LinkedList *l = static_cast<LinkedList*>(arg);
-  for(int i=0; i<1e2; i++){
+  for(int i=0; i<1e3; i++){
     l->insert(i);
   }
 
