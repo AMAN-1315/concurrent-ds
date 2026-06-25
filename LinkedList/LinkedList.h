@@ -16,7 +16,7 @@ struct LinkedList{
 
   void init(){
     this->head = nullptr;
-    pthread_mutex_init(&(this->gLock), NULL);
+    // pthread_mutex_init(&(this->gLock), NULL);
   }
 
   void insert(int data){
