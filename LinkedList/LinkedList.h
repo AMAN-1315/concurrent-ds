@@ -27,16 +27,16 @@ struct LinkedList{
     }
     temp->data = data;
 
-    pthread_mutex_lock(&(this->gLock));
+    // pthread_mutex_lock(&(this->gLock));
     temp->next = this->head;
     this->head = temp;
-    pthread_mutex_unlock(&(this->gLock));
+    // pthread_mutex_unlock(&(this->gLock));
   }
 
   bool contains(int target){
     bool rv {false};
 
-    pthread_mutex_lock(&(this->gLock));
+    // pthread_mutex_lock(&(this->gLock));
     Node* temp {this->head};
     while(temp){
       if(temp->data == target){
@@ -45,7 +45,7 @@ struct LinkedList{
       }
       temp = temp->next;
     }
-    pthread_mutex_unlock(&(this->gLock));
+    // pthread_mutex_unlock(&(this->gLock));
 
     return rv;
   }
@@ -53,13 +53,13 @@ struct LinkedList{
 };
 
 inline std::ostream& operator << (std::ostream &out, LinkedList& l){
-    pthread_mutex_lock(&(l.gLock));
+    // pthread_mutex_lock(&(l.gLock));
     Node *temp{l.head};
     while(temp){
       out << temp->data << " ";
       temp = temp->next;
     }
-    pthread_mutex_unlock(&(l.gLock));
+    // pthread_mutex_unlock(&(l.gLock));
 
     return out;
   }
