@@ -31,7 +31,7 @@ int main(){
   pthread_create(&t2, NULL, threadRoutine, &l1);
 
   pthread_join(t1, NULL);
-  pthread_join(t2, NULL);
+  // pthread_join(t2, NULL);
 
   std::cout << l1 << "\n";
 
